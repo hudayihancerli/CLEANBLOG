@@ -1,0 +1,26 @@
+{
+  "name": "cleanblog",
+  "version": "1.0.0",
+  "description": "Clena blog node.js project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hudayihancerli/CLEANBLOG.git"
+  },
+  "author": "hudayihancerli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hudayihancerli/CLEANBLOG/issues"
+  },
+  "homepage": "https://github.com/hudayihancerli/CLEANBLOG#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
