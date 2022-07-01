@@ -1,16 +1,26 @@
 const express = require('express');
+const path = require('path');
+const ejs = require('ejs');
 
 
 const app = express();
 
-app.get('/', (req, res) => {
-    const blog = {
-        id: 1,
-        title: "Blog title",
-        description: "Blog description"
-    }
+//temple engine
+app.set("view engine", "ejs");
 
-    res.send(blog)
+//middelwares
+app.use(express.static('public'));
+
+
+//routes
+app.get('/', (req, res) => {
+    res.render('index')
+})
+app.get('/about', (req, res) => {
+    res.render('about')
+})
+app.get('/add', (req, res) => {
+    res.render('add')
 })
 
 const port = 1001;
