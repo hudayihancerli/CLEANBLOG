@@ -10,9 +10,13 @@ const pageController = require('./controllers/pageController');
 const app = express();
 
 //connect Db
-mongoose.connect('mongodb://localhost/cleanblog-db', {
+mongoose.connect('mongodb+srv://hudayihancerli:Mahmyut.2746@cluster0.ueyqybo.mongodb.net/blog-app?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
+}).then(() => {
+    console.log('Db connected.');
+}).catch((err) => {
+    console.log(err);
 })
 
 //temple engine
@@ -37,7 +41,8 @@ app.delete('/posts/:id', postController.deletePost);
 app.get('/about', pageController.aboutPage)
 app.get('/add', pageController.addPage)
 app.get('/posts/edit/:id', pageController.postPage)
-const port = 1001;
+
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`Sunucu ${port} portunda başlatıldı.`);
 })
